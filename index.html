@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&M Rental Car Raiatea - Location de Voitures</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/flag-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                </a>
+            </div>
+            <nav>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" data-lang-key="home" class="active">Accueil</a></li>
+                    <li><a href="vehicules.html" data-lang-key="vehicles">Véhicules</a></li>
+                    <li><a href="tarifs.html" data-lang-key="rates">Tarifs</a></li>
+                    <li><a href="services.html" data-lang-key="services">Services</a></li>
+                    <li><a href="about.html" data-lang-key="about">À propos</a></li>
+                    <li><a href="contact.html" data-lang-key="contact">Contact</a></li>
+                </ul>
+                <div class="header-btn">
+                    <a href="reservation.html" class="btn-primary" data-lang-key="nav_book">Réserver</a>
+                </div>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="fr" title="Français">
+                        <img src="images/flags/fr.svg" alt="Français" class="flag-icon">
+                    </button>
+                    <button class="lang-btn" data-lang="en" title="English">
+                        <img src="images/flags/en.svg" alt="English" class="flag-icon">
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero.png'); background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-lang-key="hero_title">Explorez Raiatea en toute liberté</h1>
+                <p data-lang-key="hero_subtitle">Une sélection de véhicules de qualité pour découvrir l'île à votre rythme</p>
+                <a href="vehicules.html" class="btn-primary" data-lang-key="hero_cta">Découvrir notre flotte</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 data-lang-key="features_recent">Véhicules Récents</h3>
+                    <p data-lang-key="features_recent_desc">Notre flotte est régulièrement renouvelée pour vous garantir confort et sécurité.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3 data-lang-key="features_rates">Tarifs Attractifs</h3>
+                    <p data-lang-key="features_rates_desc">Des prix compétitifs adaptés à tous les budgets pour votre séjour sur l'île.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 data-lang-key="features_service">Service Personnalisé</h3>
+                    <p data-lang-key="features_service_desc">Une équipe locale à votre écoute pour un service sur mesure et des conseils avisés.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 data-lang-key="features_delivery">Livraison Possible</h3>
+                    <p data-lang-key="features_delivery_desc">Nous pouvons livrer votre véhicule à votre hôtel ou au port de Raiatea.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-vehicles">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="popular_vehicles">Nos Véhicules Populaires</h2>
+            <div class="vehicle-grid">
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="images/vehicle-compact.jpg" alt="Voiture Compacte">
+                    </div>
+                    <div class="vehicle-details">
+                        <h3 data-lang-key="compact">Economique</h3>
+                        <ul>
+                            <li><i class="fas fa-user"></i> 5 <span data-lang-key="people">personnes</span></li>
+                            <li><i class="fas fa-suitcase"></i> 2 <span data-lang-key="luggage">valises</span></li>
+                            <li><i class="fas fa-gas-pump"></i> <span data-lang-key="fuel_type">Essence</span></li>
+                            <li><i class="fas fa-cog"></i> <span data-lang-key="transmission">Manuelle</span></li>
+                        </ul>
+                        <div class="price">À partir de <span>5 500 XPF</span> / jour</div>
+                        <a href="reservation.html" class="btn-secondary" data-lang-key="book_now">Réserver</a>
+                    </div>
+                </div>
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="images/vehicle-suv.jpg" alt="SUV">
+                    </div>
+                    <div class="vehicle-details">
+                        <h3 data-lang-key="suv">SUV L200</h3>
+                        <ul>
+                            <li><i class="fas fa-user"></i> 5 <span data-lang-key="people">personnes</span></li>
+                            <li><i class="fas fa-suitcase"></i> 5 <span data-lang-key="luggage">valises</span></li>
+                            <li><i class="fas fa-gas-pump"></i> <span data-lang-key="fuel_type">Diesel</span></li>
+                            <li><i class="fas fa-cog"></i> <span data-lang-key="transmission">Manuelle</span></li>
+                        </ul>
+                        <div class="price">À partir de <span>12 000 XPF</span> / jour</div>
+                        <a href="reservation.html" class="btn-secondary" data-lang-key="book_now">Réserver</a>
+                    </div>
+                </div>
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="images/vehicle-convertible.jpg" alt="Décapotable">
+                    </div>
+                    <div class="vehicle-details">
+                        <h3 data-lang-key="convertible">Citadine</h3>
+                        <ul>
+                            <li><i class="fas fa-user"></i> 4 <span data-lang-key="people">personnes</span></li>
+                            <li><i class="fas fa-suitcase"></i> 1 <span data-lang-key="luggage">valise</span></li>
+                            <li><i class="fas fa-gas-pump"></i> <span data-lang-key="fuel_type">Essence</span></li>
+                            <li><i class="fas fa-cog"></i> <span data-lang-key="transmission">Manuelle</span></li>
+                        </ul>
+                        <div class="price">À partir de <span>5 500 XPF</span> / jour</div>
+                        <a href="reservation.html" class="btn-secondary" data-lang-key="book_now">Réserver</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="vehicules.html" class="btn-text" data-lang-key="view_all">Voir tous nos véhicules <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="testimonials">Ce que disent nos clients</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Service impeccable! La voiture était propre et en parfait état. Le personnel est très sympathique et professionnel. Je recommande vivement."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="name">Sophie D.</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Excellent rapport qualité-prix. La livraison au port était ponctuelle et le retour très simple. Une location sans tracas!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="name">Marc L.</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Parfait pour explorer l'île à notre rythme. Les conseils pour les visites étaient très utiles. Nous avons passé un séjour mémorable grâce à vous!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="name">Julie et Thomas B.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center bottom;">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-lang-key="cta_title">Prêt à découvrir Raiatea?</h2>
+                <p data-lang-key="cta_subtitle">Réservez dès maintenant votre véhicule et profitez de nos offres spéciales</p>
+                <a href="reservation.html" class="btn-primary" data-lang-key="cta_cta">Réserver maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                    <p data-lang-key="footer_slogan">Votre partenaire mobilité sur l'île de Raiatea</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_navigation">Navigation</h4>
+                        <ul>
+                            <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                            <li><a href="vehicules.html" data-lang-key="nav_vehicles">Nos Véhicules</a></li>
+                            <li><a href="tarifs.html" data-lang-key="nav_rates">Tarifs</a></li>
+                            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+                            <li><a href="about.html" data-lang-key="nav_about">À Propos</a></li>
+                            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_info">Informations</h4>
+                        <ul>
+                            <li><a href="faq.html" data-lang-key="footer_faq">FAQ</a></li>
+                            <li><a href="terms.html" data-lang-key="footer_terms">Conditions Générales</a></li>
+                            <li><a href="privacy.html" data-lang-key="footer_privacy">Politique de Confidentialité</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_contact">Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> <span data-lang-key="footer_address">Uturoa, Raiatea, Polynésie Française</span></li>
+                            <li><i class="fas fa-phone"></i> <span data-lang-key="footer_phone">+689 87 26 27 73</span></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@mmrentalcar-raiatea.com" data-lang-key="footer_email">info@mmrentalcar-raiatea.com</a></li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer_copyright">&copy; 2025 M&M Rental Car Raiatea. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/language-switcher.js"></script>
+</body>
+</html>

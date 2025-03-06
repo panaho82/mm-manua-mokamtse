@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - M&M Rental Car Raiatea</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/flag-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques à la page services */
+        .service-card {
+            background-color: white;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-normal);
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-details {
+            padding: var(--spacing-md);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-details h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+        
+        .service-details p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-light);
+            flex-grow: 1;
+        }
+        
+        .service-icon {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: var(--spacing-md);
+            position: relative;
+        }
+        
+        .process-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            border-top: 2px dashed var(--accent-color);
+            border-right: 2px dashed var(--accent-color);
+            transform: rotate(45deg);
+        }
+        
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0 auto var(--spacing-sm);
+        }
+        
+        .step-title {
+            font-weight: 500;
+            margin-bottom: var(--spacing-xs);
+            color: var(--primary-color);
+        }
+        
+        .step-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 768px) {
+            .process-step:not(:last-child):after {
+                display: none;
+            }
+            
+            .process-step {
+                margin-bottom: var(--spacing-md);
+            }
+            
+            .hamburger {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                    <li><a href="vehicules.html" data-lang-key="nav_vehicles">Nos Véhicules</a></li>
+                    <li><a href="tarifs.html" data-lang-key="nav_rates">Tarifs</a></li>
+                    <li><a href="services.html" class="active" data-lang-key="nav_services">Services</a></li>
+                    <li><a href="about.html" data-lang-key="nav_about">À Propos</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="header-btn">
+                    <a href="reservation.html" class="btn-primary" data-lang-key="nav_book">Réserver</a>
+                </div>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="fr" title="Français">
+                        <img src="images/flags/fr.svg" alt="Français" class="flag-icon">
+                    </button>
+                    <button class="lang-btn" data-lang="en" title="English">
+                        <img src="images/flags/en.svg" alt="English" class="flag-icon">
+                    </button>
+                </div>
+                <div class="hamburger" style="margin-top: 10px;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center; padding: var(--spacing-lg) 0; color: white; text-align: center;">
+        <div class="container">
+            <h1 data-lang-key="services_title">Nos Services</h1>
+            <p data-lang-key="services_subtitle">Des prestations sur mesure pour un séjour sans souci</p>
+        </div>
+    </section>
+
+    <section class="services-intro">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="services_intro_title">Nos Prestations</h2>
+            <p class="section-description" data-lang-key="services_intro_text">Chez M&M Rental Car Raiatea, nous nous efforçons de rendre votre expérience de location aussi simple et agréable que possible. Découvrez nos services conçus pour répondre à tous vos besoins.</p>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-delivery.jpg" alt="Livraison de véhicule">
+                    </div>
+                    <div class="service-details">
+                        <div class="service-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3 data-lang-key="service_delivery_title">Livraison & Récupération</h3>
+                        <p data-lang-key="service_delivery_text">Nous livrons gratuitement votre véhicule à votre hôtel, pension de famille ou au port de Raiatea. Notre équipe s'occupe également de la récupération à la fin de votre séjour.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-support.jpg" alt="Assistance 24/7">
+                    </div>
+                    <div class="service-details">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 data-lang-key="service_support_title">Assistance 24/7</h3>
+                        <p data-lang-key="service_support_text">Notre service d'assistance est disponible 24h/24 et 7j/7 pour répondre à toutes vos questions ou résoudre tout problème pendant votre location.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-insurance.jpg" alt="Assurances complètes">
+                    </div>
+                    <div class="service-details">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 data-lang-key="service_insurance_title">Assurances Complètes</h3>
+                        <p data-lang-key="service_insurance_text">Tous nos véhicules sont couverts par une assurance tous risques. Des options de réduction de franchise sont également disponibles pour une tranquillité d'esprit totale.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-accessories.jpg" alt="Accessoires de location">
+                    </div>
+                    <div class="service-details">
+                        <div class="service-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h3 data-lang-key="service_accessories_title">Accessoires & Options</h3>
+                        <p data-lang-key="service_accessories_text">Personnalisez votre location avec nos accessoires : sièges bébé/enfant, GPS, Wi-Fi portable, et plus encore pour un confort optimal.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-tourism.jpg" alt="Conseils touristiques">
+                    </div>
+                    <div class="service-details">
+                        <div class="service-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 data-lang-key="service_tourism_title">Conseils Touristiques</h3>
+                        <p data-lang-key="service_tourism_text">Notre équipe locale vous fournit des conseils personnalisés sur les meilleurs endroits à visiter, les restaurants à essayer et les activités à ne pas manquer sur l'île.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/service-maintenance.jpg" alt="Entretien régulier">
+                    </div>
+                    <div class="service-details">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3 data-lang-key="service_maintenance_title">Entretien Régulier</h3>
+                        <p data-lang-key="service_maintenance_text">Tous nos véhicules sont soigneusement entretenus et vérifiés avant chaque location pour garantir votre sécurité et votre confort.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rental-process" style="background-color: var(--light-bg); padding: var(--spacing-lg) 0;">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="rental_process_title">Notre Processus de Location</h2>
+            <p class="section-description" data-lang-key="rental_process_text">Louer un véhicule avec M&M Rental Car Raiatea est simple et rapide. Voici comment cela fonctionne :</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title" data-lang-key="rental_process_step1_title">Réservation</div>
+                    <div class="step-description" data-lang-key="rental_process_step1_text">Réservez en ligne, par téléphone ou par email en précisant vos dates et le type de véhicule souhaité.</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title" data-lang-key="rental_process_step2_title">Confirmation</div>
+                    <div class="step-description" data-lang-key="rental_process_step2_text">Recevez une confirmation de réservation avec tous les détails de votre location.</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title" data-lang-key="rental_process_step3_title">Livraison</div>
+                    <div class="step-description" data-lang-key="rental_process_step3_text">Nous livrons votre véhicule à l'endroit de votre choix (hôtel, port, etc.).</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-title" data-lang-key="rental_process_step4_title">Profitez</div>
+                    <div class="step-description" data-lang-key="rental_process_step4_text">Explorez l'île de Raiatea en toute liberté avec votre véhicule.</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-title" data-lang-key="rental_process_step5_title">Retour</div>
+                    <div class="step-description" data-lang-key="rental_process_step5_text">Nous récupérons le véhicule à l'endroit convenu à la fin de votre séjour.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="faq_title">Questions Fréquentes</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 data-lang-key="faq_question1_title">Quels documents sont nécessaires pour louer un véhicule ?</h3>
+                    <p data-lang-key="faq_question1_text">Pour louer un véhicule, vous devez présenter un permis de conduire valide, une pièce d'identité (passeport) et une carte de crédit pour la caution.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 data-lang-key="faq_question2_title">Comment fonctionne la livraison de véhicule ?</h3>
+                    <p data-lang-key="faq_question2_text">Nous livrons gratuitement votre véhicule à votre hôtel, pension de famille ou au port. Il vous suffit de nous indiquer l'heure et le lieu lors de votre réservation.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 data-lang-key="faq_question3_title">Quel est le montant de la caution ?</h3>
+                    <p data-lang-key="faq_question3_text">Le montant de la caution varie selon le type de véhicule, généralement entre 50 000 et 150 000 XPF. Elle est bloquée sur votre carte de crédit et libérée après le retour du véhicule en bon état.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 data-lang-key="faq_question4_title">Le carburant est-il inclus ?</h3>
+                    <p data-lang-key="faq_question4_text">Non, le carburant n'est pas inclus. Nous vous remettons le véhicule avec le plein et vous devez le rendre avec le même niveau de carburant.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 data-lang-key="faq_question5_title">Puis-je modifier ou annuler ma réservation ?</h3>
+                    <p data-lang-key="faq_question5_text">Oui, vous pouvez modifier ou annuler votre réservation jusqu'à 48 heures avant la date de prise en charge sans frais. Passé ce délai, des frais peuvent s'appliquer.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--spacing-lg);">
+                <a href="faq.html" class="btn-text" data-lang-key="faq_see_all">Voir toutes les questions fréquentes <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center bottom;">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-lang-key="cta_title">Besoin d'un service personnalisé ?</h2>
+                <p data-lang-key="cta_text">N'hésitez pas à nous contacter pour toute demande spécifique</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn-primary" data-lang-key="cta_contact">Nous contacter</a>
+                    <a href="reservation.html" class="btn-secondary" data-lang-key="cta_book">Réserver maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                    <p data-lang-key="footer_text">Votre partenaire mobilité sur l'île de Raiatea</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_navigation_title">Navigation</h4>
+                        <ul>
+                            <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                            <li><a href="vehicules.html" data-lang-key="nav_vehicles">Nos Véhicules</a></li>
+                            <li><a href="tarifs.html" data-lang-key="nav_rates">Tarifs</a></li>
+                            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+                            <li><a href="about.html" data-lang-key="nav_about">À Propos</a></li>
+                            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_information_title">Informations</h4>
+                        <ul>
+                            <li><a href="faq.html" data-lang-key="nav_faq">FAQ</a></li>
+                            <li><a href="terms.html" data-lang-key="nav_terms">Conditions Générales</a></li>
+                            <li><a href="privacy.html" data-lang-key="nav_privacy">Politique de Confidentialité</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_contact_title">Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Uturoa, Raiatea, Polynésie Française</li>
+                            <li><i class="fas fa-phone"></i> +689 87 XX XX XX</li>
+                            <li><i class="fas fa-envelope"></i> info@mmrentalcar-raiatea.com</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer_copyright">&copy; 2025 M&M Rental Car Raiatea. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <style>
+        /* Styles pour la section FAQ */
+        .faq-container {
+            margin-top: var(--spacing-md);
+        }
+        
+        .faq-item {
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid #eee;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-item h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,1065 @@
+/* 
+   M&M Rental Car Raiatea - Main Stylesheet
+   Modern, clean UI/UX design
+   Updated to match logo colors
+*/
+
+:root {
+    /* Updated colors based on logo */
+    --primary-color: #1478c4; /* Bleu du logo - couleur principale */
+    --secondary-color: #00a0d1; /* Bleu ciel - couleur secondaire */
+    --accent-color: #ff8c00; /* Orange - couleur d'accent */
+    --dark-color: #1478c4; /* Bleu foncé - pour texte et fonds */
+    --light-color: #f8f9fa; /* Blanc cassé - pour les fonds */
+    --text-color: #333333; /* Gris foncé pour texte normal */
+    --text-light: #6c757d; /* Gris clair pour texte secondaire */
+    --success-color: #00b36b; /* Vert pour messages de succès */
+    --warning-color: #ffd166; /* Jaune pour avertissements */
+    --danger-color: #ef476f; /* Rouge pour erreurs/danger */
+    
+    /* Typography */
+    --body-font: 'Poppins', sans-serif;
+    --heading-font: 'Poppins', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;  
+    --spacing-xl: 2.5rem;  
+    
+    /* Borders */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light-color);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-md);
+    color: var(--dark-color);
+}
+
+h1 {
+    font-size: 2.75rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Layout & Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: var(--spacing-md) auto 0;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-text {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--border-radius-md);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    display: inline-block;
+    transition: background-color var(--transition-normal), transform var(--transition-normal);
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(255, 140, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #ff7700;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-text {
+    color: var(--primary-color);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.btn-text i {
+    color: var(--accent-color);
+    transition: transform var(--transition-normal);
+}
+
+.btn-text:hover {
+    color: var(--accent-color);
+}
+
+.btn-text:hover i {
+    transform: translateX(5px);
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--dark-color);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-width: 120px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: relative;
+    padding: 0.3rem 0;
+}
+
+.menu a:hover, .menu a.active {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.menu a.active {
+    font-weight: 600; /* Assurer que le poids est uniforme */
+}
+
+.menu a.active:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 20px;
+    height: 3px;
+    background-color: var(--accent-color);
+    transform: translateX(-50%);
+    transition: width var(--transition-normal);
+}
+
+.menu a:hover:after {
+    width: 100%;
+}
+
+.header-btn {
+    margin-left: 1.5rem;
+}
+
+.header-btn .btn-primary {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 2000;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white; /* Toujours blanc pour être visible sur fond foncé */
+    transition: all 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.hamburger span:last-child {
+    margin-bottom: 0;
+}
+
+body.menu-open .hamburger span {
+    background-color: white;
+}
+
+/* Overlay for mobile menu */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1400; /* En dessous du menu mais au-dessus du reste */
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* Style pour le body lorsque le menu est ouvert */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Suppression de l'effet de flou qui cause des problèmes */
+body.menu-open .menu-overlay {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 38, 76, 0.7), rgba(0, 38, 76, 0.7)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: var(--spacing-xl) 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 650px;
+    text-align: left;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+}
+
+/* Features Section */
+.features {
+    background-color: white;
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.feature-card {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    background: white;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+}
+
+.feature-card .icon {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.feature-card h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.feature-card p {
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+/* Popular Vehicles Section */
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* Nouvelle grille tarifaire */
+.grille-tarifs {
+    background: white;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.entete-grille {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+.ligne-tarif {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.ligne-tarif:hover {
+    background-color: #f8f9fa;
+}
+
+.col-voiture {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 500;
+}
+
+.col-voiture i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.col-categorie {
+    display: flex;
+    align-items: center;
+}
+
+.col-capacite {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.col-prix {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: black; /* Tester la couleur noire pour le texte Tarifs 24H */
+}
+
+.tarifs-text {
+    color: white; /* Couleur blanche pour le texte 'Tarifs 24H' */
+}
+
+.notes-tarifs {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    margin-top: 1.5rem;
+    border-radius: var(--border-radius-md);
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .entete-grille,
+    .ligne-tarif {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .entete-grille div {
+        display: none;
+    }
+    
+    .ligne-tarif {
+        padding: 1.5rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .col-voiture {
+        font-size: 1.1rem;
+    }
+}
+
+.vehicle-card {
+    background: white;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.vehicle-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.vehicle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.vehicle-card:hover .vehicle-image img {
+    transform: scale(1.05);
+}
+
+.vehicle-details {
+    padding: var(--spacing-md);
+}
+
+.vehicle-details h3 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+}
+
+.vehicle-details ul {
+    margin-bottom: var(--spacing-md);
+}
+
+.vehicle-details li {
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.vehicle-details li i {
+    color: var(--primary-color);
+    width: 16px;
+}
+
+.vehicle-details .price {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-light);
+}
+
+.vehicle-details .price span {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.view-all {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: var(--dark-color);
+    color: white;
+    padding: var(--spacing-lg) 0;
+}
+
+.testimonials .section-title {
+    color: white;
+    margin-bottom: var(--spacing-lg);
+}
+
+.testimonials .section-title:after {
+    background: var(--accent-color);
+}
+
+.testimonial-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.testimonial {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    transition: transform var(--transition-normal);
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-content {
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.testimonial-content p {
+    margin-bottom: 0;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.rating {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+}
+
+.name {
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(rgba(20, 120, 196, 0.9), rgba(20, 120, 196, 0.9)), url('../images/cta-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta h2 {
+    color: white;
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.8rem;
+}
+
+.cta p {
+    margin-bottom: var(--spacing-md);
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding-top: var(--spacing-xl);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+}
+
+.footer-logo {
+    max-width: 140px;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.footer-logo p {
+    margin-top: var(--spacing-md);
+    color: white;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.link-column h4 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-md);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.link-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.link-column a {
+    color: white;
+    transition: color var(--transition-fast);
+    font-size: 0.9rem;
+}
+
+.link-column a:hover {
+    color: var(--accent-color);
+}
+
+.contact-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    color: white;
+    font-size: 0.9rem;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+    min-width: 20px;
+    margin-top: 4px;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.social-links a:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright {
+  color: #ffffff;
+}
+
+.footer-copyright p {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Styles pour le sélecteur de langue */
+.language-selector {
+    display: flex;
+    align-items: center;
+    margin-left: var(--spacing-md);
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    margin: 0 0.2rem;
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.lang-btn:hover {
+    color: var(--primary-color);
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Animation pour le menu mobile */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .footer-logo {
+        max-width: 120px;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Style du header en mobile */
+    header .container {
+        position: relative;
+    }
+    
+    /* Style du hamburger */
+    .hamburger {
+        display: flex;
+        z-index: 2000;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 40px; /* Further increased margin for better visibility */
+    }
+    
+    /* Transformation du hamburger en X */
+    body.menu-open .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    body.menu-open .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    body.menu-open .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
+    /* Style du menu mobile */
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #00264c; /* Couleur foncée du thème */
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        z-index: 1500;
+        transition: right 0.3s ease;
+        overflow-y: auto;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        display: flex !important;
+    }
+
+    .menu.active {
+        right: 0;
+    }
+
+    .menu li {
+        margin-bottom: 15px;
+        width: 100%;
+        opacity: 1 !important; /* S'assurer que les éléments sont toujours visibles */
+        position: relative;
+        z-index: 1600;
+    }
+
+    .menu a {
+        font-size: 0.9rem; /* Assurez-vous que la taille de police est cohérente */
+        color: white !important; /* S'assurer que les liens sont toujours visibles */
+        opacity: 1 !important;
+        position: relative;
+        z-index: 1600;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .menu a:hover, .menu a.active {
+        color: #ff8c00 !important; /* Couleur d'accent */
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Supprimer le pseudo-élément qui peut interférer avec les clics */
+    .menu a:after {
+        display: none;
+    }
+
+    /* Style du bouton de réservation dans le menu mobile */
+    .header-btn {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: 0;
+        width: 80%;
+        text-align: center;
+        z-index: 1501;
+        display: none;
+    }
+    
+    .menu.active + .header-btn {
+        display: block;
+    }
+    
+    .header-btn .btn-primary {
+        width: 100%;
+        padding: 12px 20px;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .feature-grid, .vehicle-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .testimonial-slider {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    section {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .hero {
+        min-height: 400px;
+    }
+    
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        margin-bottom: var(--spacing-xs);
+    }
+}
+
+/* Ajout de styles pour centrer les images et éviter qu'elles ne débordent */
+.service-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+}
+
+.service-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Ajout de styles pour centrer les images et éviter qu'elles ne débordent */
+.service-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+}
+
+.service-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Ajout de styles pour limiter la largeur des cartes de service et ajuster la hauteur des images */
+.service-card {
+    max-width: 300px; /* Ajustez la largeur maximale selon vos besoins */
+    margin: 0 auto; /* Centre les cartes */
+}
+
+.service-image img {
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+    object-fit: contain;
+}
+
+.service-card {
+    max-width: 300px; /* Ajustez la largeur maximale selon vos besoins */
+    margin: 0 auto; /* Centre les cartes */
+}
+
+.service-image img {
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+    object-fit: contain;
+}

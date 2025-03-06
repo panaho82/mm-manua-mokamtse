@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Véhicules - M&M Rental Car Raiatea</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/flag-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                    <li><a href="vehicules.html" class="active" data-lang-key="nav_vehicles">Véhicules</a></li>
+                    <li><a href="tarifs.html" data-lang-key="nav_rates">Tarifs</a></li>
+                    <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+                    <li><a href="about.html" data-lang-key="nav_about">À Propos</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="header-btn">
+                    <a href="reservation.html" class="btn-primary" data-lang-key="nav_book">Réserver</a>
+                </div>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="fr" title="Français">
+                        <img src="images/flags/fr.svg" alt="Français" class="flag-icon">
+                    </button>
+                    <button class="lang-btn" data-lang="en" title="English">
+                        <img src="images/flags/en.svg" alt="English" class="flag-icon">
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center; padding: var(--spacing-lg) 0; color: white; text-align: center;">
+        <div class="container">
+            <h1 data-lang-key="vehicles_title">Notre Flotte de Véhicules</h1>
+            <p data-lang-key="vehicles_subtitle">Découvrez notre gamme complète de véhicules pour tous vos besoins</p>
+        </div>
+    </section>
+
+    <section class="vehicle-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all" data-lang-key="category_all">Tous</button>
+                <button class="category-tab" data-category="economy" data-lang-key="category_economy">Économiques</button>
+                <button class="category-tab" data-category="suv" data-lang-key="category_suv">SUV & 4x4</button>
+                <button class="category-tab" data-category="premium" data-lang-key="category_premium">Premium</button>
+                <button class="category-tab" data-category="special" data-lang-key="category_special">Spéciaux</button>
+            </div>
+
+            <div class="vehicle-grid">
+                <!-- Catégorie: Économiques -->
+                <div class="vehicle-card" data-category="economy">
+                    <div class="vehicle-image">
+                        <img src="images/kia rio.png" alt="Kia Rio">
+                    </div>
+                    <div class="vehicle-details">
+                        <h3>Kia Rio</h3>
+                        <ul>
+                            <li><i class="fas fa-user"></i> 5 personnes</li>
+                            <li><i class="fas fa-suitcase"></i> 2 valises</li>
+                            <li><i class="fas fa-gas-pump"></i> Essence</li>
+                            <li><i class="fas fa-cog"></i> Manuelle</li>
+                        </ul>
+                        <div class="price">À partir de <span>6 000 XPF</span> / jour</div>
+                        <a href="reservation.html" class="btn-secondary">Réserver</a>
+                    </div>
+                </div>
+
+                <div class="vehicle-card" data-category="economy">
+                    <div class="vehicle-image">
+                        <img src="images/kia picanto.png" alt="Kia Picanto 5">
+                    </div>
+                    <div class="vehicle-details">
+                        <h3>Kia Picanto 5</h3>
+                        <ul>
+                            <li><i class="fas fa-user"></i> 4 personnes</li>
+                            <li><i class="fas fa-suitcase"></i> 1 valise</li>
+                            <li><i class="fas fa-gas-pump"></i> Essence</li>
+                            <li><i class="fas fa-cog"></i> Manuelle</li>
+                        </ul>
+                        <div class="price">À partir de <span>5 500 XPF</span> / jour</div>
+                        <a href="reservation.html" class="btn-secondary">Réserver</a>
+                    </div>
+                </div>
+
+                <div class="vehicle-card" data-category="economy">
+                    <div class="vehicle-image">
+                        <img src="images/peugeot-208.png" alt="Peugeot 208">
+                    </div>
+                    <div class="vehicle-details">
+                        <h3>Peugeot 208</h3>
+                        <ul>
+                            <li><i class="fas fa-user"></i> 5 personnes</li>
+                            <li><i class="fas fa-suitcase"></i> 2 valises</li>
+                            <li><i class="fas fa-gas-pump"></i> Essence</li>
+                            <li><i class="fas fa-cog"></i> Manuelle</li>
+                        </ul>
+                        <div class="price">À partir de <span>6 000 XPF</span> / jour</div>
+                        <a href="reservation.html" class="btn-secondary">Réserver</a>
+                    </div>
+                </div>
+
+                <div class="vehicle-card" data-category="economy">
+                    <div class="vehicle-image">
+                        <img src="images/mirage.png" alt="Mirage">
+                    </div>
+                    <div class="vehicle-details">
+                        <h3>Mirage</h3>
+                        <ul>
+                            <li><i class="fas fa-user"></i> 5 personnes</li>
+                            <li><i class="fas fa-suitcase"></i> 2 valises</li>
+                            <li><i class="fas fa-gas-pump"></i> Essence</li>
+                            <li><i class="fas fa-cog"></i> Manuelle</li>
+                        </ul>
+                        <div class="price">À partir de <span>5 500 XPF</span> / jour</div>
+                        <a href="reservation.html" class="btn-secondary">Réserver</a>
+                    </div>
+                </div>
+
+                <div class="vehicle-card" data-category="economy">
+                    <div class="vehicle-image">
+                        <img src="images/suzuki swift.png" alt="Swift Manuelle">
+                    </div>
+                    <div class="vehicle-details">
+                        <h3>Swift Manuelle</h3>
+                        <ul>
+                            <li><i class="fas fa-user"></i> 5 personnes</li>
+                            <li><i class="fas fa-suitcase"></i> 2 valises</li>
+                            <li><i class="fas fa-gas-pump"></i> Essence</li>
+                            <li><i class="fas fa-cog"></i> Manuelle</li>
+                        </ul>
+                        <div class="price">À partir de <span>6 000 XPF</span> / jour</div>
+                        <a href="reservation.html" class="btn-secondary">Réserver</a>
+                    </div>
+                </div>
+
+                <div class="vehicle-card" data-category="economy">
+                    <div class="vehicle-image">
+                        <img src="images/suzuki swift.png" alt="Swift Auto">
+                    </div>
+                    <div class="vehicle-details">
+                        <h3>Swift Auto</h3>
+                        <ul>
+                            <li><i class="fas fa-user"></i> 5 personnes</li>
+                            <li><i class="fas fa-suitcase"></i> 2 valises</li>
+                            <li><i class="fas fa-gas-pump"></i> Essence</li>
+                            <li><i class="fas fa-cog"></i> Automatique</li>
+                        </ul>
+                        <div class="price">À partir de <span>6 500 XPF</span> / jour</div>
+                        <a href="reservation.html" class="btn-secondary">Réserver</a>
+                    </div>
+                </div>
+
+                <!-- Catégorie: SUV & 4x4 -->
+                <div class="vehicle-card" data-category="suv">
+                    <div class="vehicle-image">
+                        <img src="images/vehicle-suv.jpg" alt="Mitsubishi L200">
+                    </div>
+                    <div class="vehicle-details">
+                        <h3>Mitsubishi L200</h3>
+                        <ul>
+                            <li><i class="fas fa-user"></i> 5 personnes</li>
+                            <li><i class="fas fa-suitcase"></i> 4 valises</li>
+                            <li><i class="fas fa-gas-pump"></i> Diesel</li>
+                            <li><i class="fas fa-cog"></i> Manuelle</li>
+                        </ul>
+                        <div class="price">À partir de <span>12 000 XPF</span> / jour</div>
+                        <a href="reservation.html" class="btn-secondary">Réserver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vehicle-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>Conditions de Location</h3>
+                    <ul>
+                        <li>Âge minimum : 21 ans</li>
+                        <li>Permis de conduire valide depuis au moins 1 an</li>
+                        <li>Caution requise</li>
+                        <li>Kilométrage illimité</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Assurances</h3>
+                    <ul>
+                        <li>Assurance tous risques incluse</li>
+                        <li>Option réduction de franchise disponible</li>
+                        <li>Assistance 24/7</li>
+                        <li>Protection contre le vol</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h3>Options Supplémentaires</h3>
+                    <ul>
+                        <li>Siège bébé/enfant</li>
+                        <li>GPS</li>
+                        <li>Conducteur additionnel</li>
+                        <li>Wi-Fi portable</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center bottom;">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Trouvé le véhicule idéal?</h2>
+                <p>Réservez dès maintenant et assurez-vous de sa disponibilité pour votre séjour</p>
+                <a href="reservation.html" class="btn-primary">Réserver maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                    <p>Votre partenaire mobilité sur l'île de Raiatea</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="vehicules.html">Véhicules</a></li>
+                            <li><a href="tarifs.html">Tarifs</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">À Propos</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Informations</h4>
+                        <ul>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="terms.html">Conditions Générales</a></li>
+                            <li><a href="privacy.html">Politique de Confidentialité</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Uturoa, Raiatea, Polynésie Française</li>
+                            <li><i class="fas fa-phone"></i> +689 87 XX XX XX</li>
+                            <li><i class="fas fa-envelope"></i> info@mmrentalcar-raiatea.com</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 M&M Rental Car Raiatea. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Script pour filtrer les véhicules par catégorie
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const vehicleCards = document.querySelectorAll('.vehicle-card');
+            
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Mettre à jour les onglets actifs
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filtrer les véhicules
+                    vehicleCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="js/language-switcher.js"></script>
+</body>
+</html>

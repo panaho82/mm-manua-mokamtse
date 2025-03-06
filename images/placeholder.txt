@@ -1,0 +1,12 @@
+Ce dossier contiendra les images suivantes:
+
+1. logo.png - Logo de M&M Rental Car Raiatea
+2. hero-bg.jpg - Image de fond pour la section d'en-tête
+3. cta-bg.jpg - Image de fond pour la section d'appel à l'action
+4. reservation-header.jpg - Image d'en-tête pour la page de réservation
+5. vehicle-compact.jpg - Image d'une voiture compacte
+6. vehicle-suv.jpg - Image d'un SUV
+7. vehicle-convertible.jpg - Image d'une décapotable
+8. [Autres images de véhicules...]
+
+Note: Veuillez remplacer ces espaces réservés par des images réelles pour le site final.

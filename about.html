@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - M&M Rental Car Raiatea</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/flag-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques à la page À Propos */
+        .about-section {
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .about-text p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .values-section {
+            background-color: var(--light-bg);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .value-card {
+            background-color: white;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .value-title {
+            font-weight: 500;
+            margin-bottom: var(--spacing-xs);
+            color: var(--primary-color);
+        }
+        
+        .team-section {
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .member-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto var(--spacing-sm);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-name {
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .member-role {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .member-bio {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .testimonials-section {
+            background-color: var(--light-bg);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(0, 86, 166, 0.1);
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: var(--spacing-sm);
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+        
+        .author-info p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+                margin-bottom: var(--spacing-md);
+            }
+            
+            .hamburger {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/M&M Rental Car logo.png" alt="M&M Rental Car Raiatea Logo" style="width: 150px; height: auto;">
+                </a>
+            </div>
+            <nav>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="fr" title="Français">
+                        <img src="images/flags/fr.svg" alt="Français" class="flag-icon">
+                    </button>
+                    <button class="lang-btn" data-lang="en" title="English">
+                        <img src="images/flags/en.svg" alt="English" class="flag-icon">
+                    </button>
+                </div>
+                <div class="hamburger" style="margin-top: 10px;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                    <li><a href="vehicules.html" data-lang-key="nav_vehicles">Nos Véhicules</a></li>
+                    <li><a href="tarifs.html" data-lang-key="nav_rates">Tarifs</a></li>
+                    <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+                    <li><a href="about.html" class="active" data-lang-key="nav_about">À Propos</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="header-btn">
+                    <a href="reservation.html" class="btn-primary" data-lang-key="nav_book">Réserver</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center; padding: var(--spacing-lg) 0; color: white; text-align: center;">
+        <div class="container">
+            <h1>À Propos de Nous</h1>
+            <p>Découvrez l'histoire et les valeurs de M&M Rental Car Raiatea</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Notre Histoire</h2>
+                    <p>M&M Rental Car a été fondée en 2015 par deux amis passionnés par l'île de Raiatea, Marc et Michel. Ayant constaté le besoin d'un service de location de voitures fiable et personnalisé sur l'île, ils ont décidé de créer leur propre entreprise.</p>
+                    <p>Au départ, notre flotte ne comptait que 5 véhicules. Aujourd'hui, nous sommes fiers de proposer plus de 30 véhicules de différentes catégories pour répondre à tous les besoins de nos clients.</p>
+                    <p>Notre connaissance approfondie de l'île et notre engagement envers un service client exceptionnel nous ont permis de devenir l'une des agences de location les plus appréciées de Raiatea.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/M&M Rental Car logo.png" alt="M&M Rental Car Raiatea">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Nos Valeurs</h2>
+            <p class="section-description">Chez M&M Rental Car, nous sommes guidés par des valeurs fortes qui définissent notre approche et notre service.</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Service Personnalisé</h3>
+                    <p>Nous croyons en un service sur mesure, adapté aux besoins spécifiques de chaque client.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="value-title">Fiabilité</h3>
+                    <p>Nos véhicules sont régulièrement entretenus pour garantir votre sécurité et votre confort.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="value-title">Passion Locale</h3>
+                    <p>Notre amour pour Raiatea nous pousse à partager les meilleurs endroits et expériences avec nos clients.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="value-title">Respect de l'Environnement</h3>
+                    <p>Nous nous engageons à minimiser notre impact environnemental et à promouvoir un tourisme responsable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Notre Équipe</h2>
+            <p class="section-description">Rencontrez les personnes passionnées qui font de M&M Rental Car une expérience unique.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team-marc.jpg" alt="Marc">
+                    </div>
+                    <h3 class="member-name">Marc Dupont</h3>
+                    <p class="member-role">Co-fondateur & Directeur</p>
+                    <p class="member-bio">Originaire de Tahiti, Marc a plus de 15 ans d'expérience dans le tourisme en Polynésie française. Sa connaissance approfondie de Raiatea en fait un guide précieux pour nos clients.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team-michel.jpg" alt="Michel">
+                    </div>
+                    <h3 class="member-name">Michel Leroy</h3>
+                    <p class="member-role">Co-fondateur & Responsable Technique</p>
+                    <p class="member-bio">Passionné de mécanique, Michel veille personnellement à l'entretien rigoureux de notre flotte. Son expertise garantit des véhicules toujours en parfait état.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team-sophie.jpg" alt="Sophie">
+                    </div>
+                    <h3 class="member-name">Sophie Moana</h3>
+                    <p class="member-role">Responsable Clientèle</p>
+                    <p class="member-bio">Née à Raiatea, Sophie connaît chaque recoin de l'île. Son sourire et sa gentillesse naturelle font d'elle la personne idéale pour accueillir nos clients.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team-thomas.jpg" alt="Thomas">
+                    </div>
+                    <h3 class="member-name">Thomas Tehau</h3>
+                    <p class="member-role">Logistique & Livraison</p>
+                    <p class="member-bio">Toujours ponctuel et serviable, Thomas s'occupe de la livraison et de la récupération des véhicules. Son efficacité est appréciée de tous nos clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Ce que disent nos clients</h2>
+            <p class="section-description">Découvrez les témoignages de ceux qui ont choisi M&M Rental Car pour leur séjour à Raiatea.</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Service impeccable ! La voiture était en parfait état et la livraison à notre pension de famille a été très appréciée. Les conseils pour visiter l'île étaient précieux.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-1.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Jean et Marie D.</h4>
+                            <p>France</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Nous avons loué un 4x4 pour explorer l'intérieur de l'île. Le véhicule était parfaitement adapté aux routes et l'équipe a été très réactive quand nous avons eu besoin d'aide.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-2.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah W.</h4>
+                            <p>Australie</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Troisième fois que nous louons chez M&M et toujours aussi satisfaits. Des prix raisonnables, des véhicules propres et un personnel adorable. Que demander de plus ?</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-3.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Robert et Lisa M.</h4>
+                            <p>États-Unis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center bottom;">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à découvrir Raiatea avec nous ?</h2>
+                <p>Réservez dès maintenant et profitez de notre service personnalisé</p>
+                <a href="reservation.html" class="btn-primary">Réserver maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                    <p>Votre partenaire mobilité sur l'île de Raiatea</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="vehicules.html">Nos Véhicules</a></li>
+                            <li><a href="tarifs.html">Tarifs</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">À Propos</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Informations</h4>
+                        <ul>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="terms.html">Conditions Générales</a></li>
+                            <li><a href="privacy.html">Politique de Confidentialité</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Uturoa, Raiatea, Polynésie Française</li>
+                            <li><i class="fas fa-phone"></i> +689 87 XX XX XX</li>
+                            <li><i class="fas fa-envelope"></i> info@mmrentalcar-raiatea.com</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 M&M Rental Car Raiatea. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/language-switcher.js"></script>
+</body>
+</html>

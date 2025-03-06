@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - M&M Rental Car Raiatea</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/flag-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for reservation page */
+        .reservation-section {
+            padding: var(--spacing-xl) 0;
+            background-color: white;
+        }
+        
+        .reservation-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+        }
+        
+        .reservation-info {
+            padding-right: var(--spacing-lg);
+        }
+        
+        .reservation-form {
+            background-color: var(--light-color);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius-sm);
+            font-family: var(--body-font);
+            transition: border-color var(--transition-fast);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+        }
+        
+        .form-control.error {
+            border-color: var(--danger-color);
+        }
+        
+        .form-note {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-top: var(--spacing-xs);
+        }
+        
+        .form-success {
+            background-color: var(--success-color);
+            color: white;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            text-align: center;
+        }
+        
+        .important-info {
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-md);
+            background-color: rgba(var(--primary-color-rgb), 0.05);
+            border-left: 3px solid var(--primary-color);
+            border-radius: var(--border-radius-sm);
+        }
+        
+        .important-info h4 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+        
+        .important-info ul {
+            padding-left: var(--spacing-md);
+            list-style-type: disc;
+        }
+        
+        .important-info li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        @media (max-width: 768px) {
+            .reservation-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .reservation-info {
+                padding-right: 0;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-sm);
+            }
+            
+            .hamburger {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                    <li><a href="vehicules.html" data-lang-key="nav_vehicles">Nos Véhicules</a></li>
+                    <li><a href="tarifs.html" data-lang-key="nav_rates">Tarifs</a></li>
+                    <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+                    <li><a href="about.html" data-lang-key="nav_about">À Propos</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="header-btn">
+                    <a href="reservation.html" class="btn-primary" data-lang-key="nav_book">Réserver</a>
+                </div>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="fr" title="Français">
+                        <img src="images/flags/fr.svg" alt="Français" class="flag-icon">
+                    </button>
+                    <button class="lang-btn" data-lang="en" title="English">
+                        <img src="images/flags/en.svg" alt="English" class="flag-icon">
+                    </button>
+                </div>
+                <div class="hamburger" style="margin-top: 10px;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center; padding: var(--spacing-lg) 0; color: white; text-align: center;">
+        <div class="container">
+            <h1 data-lang-key="reservation_title">Réservation</h1>
+            <p data-lang-key="reservation_subtitle">Réservez votre véhicule en quelques étapes simples</p>
+        </div>
+    </section>
+
+    <section class="reservation-section">
+        <div class="container">
+            <div class="reservation-container">
+                <div class="reservation-info">
+                    <h2 data-lang-key="reservation_how_to">Comment réserver</h2>
+                    <p data-lang-key="reservation_how_to_text1">Pour réserver votre véhicule chez M&M Rental Car Raiatea, il vous suffit de remplir le formulaire ci-contre avec vos informations et vos dates de location souhaitées.</p>
+                    
+                    <p data-lang-key="reservation_how_to_text2">Une fois votre demande envoyée, notre équipe vous contactera dans les plus brefs délais pour confirmer la disponibilité et finaliser votre réservation.</p>
+                    
+                    <h3 data-lang-key="reservation_why_choose">Pourquoi choisir M&M Rental Car?</h3>
+                    <ul>
+                        <li data-lang-key="reservation_benefit1">Véhicules récents et bien entretenus</li>
+                        <li data-lang-key="reservation_benefit2">Tarifs compétitifs et transparents</li>
+                        <li data-lang-key="reservation_benefit3">Service personnalisé et conseils sur les visites</li>
+                        <li data-lang-key="reservation_benefit4">Livraison possible à votre hôtel ou au port</li>
+                        <li data-lang-key="reservation_benefit5">Équipe locale connaissant parfaitement l'île</li>
+                    </ul>
+                    
+                    <div class="important-info">
+                        <h4 data-lang-key="reservation_important_info">Informations importantes</h4>
+                        <ul>
+                            <li data-lang-key="reservation_important_info1">Permis de conduire valide obligatoire (depuis plus d'un an)</li>
+                            <li data-lang-key="reservation_important_info2">Âge minimum : 21 ans</li>
+                            <li data-lang-key="reservation_important_info4">Assurance incluse dans nos tarifs</li>
+                            <li data-lang-key="reservation_important_info5">En cas d'annulation, merci de nous prévenir au moins 48h à l'avance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="reservation-form-container">
+                    <form class="reservation-form">
+                        <h2 data-lang-key="reservation_form_title">Demande de réservation</h2>
+                        
+                        <div class="form-group">
+                            <label for="vehicle-type" data-lang-key="reservation_vehicle_type">Type de véhicule*</label>
+                            <select id="vehicle-type" class="form-control" required>
+                                <option value="">Sélectionnez un véhicule</option>
+                                <option value="kia-rio">Kia Rio</option>
+                                <option value="kia-picanto">Kia Picanto</option>
+                                <option value="peugeot-208">Peugeot 208</option>
+                                <option value="mitsubishi-mirage">Mitsubishi Mirage</option>
+                                <option value="suzuki-swift-manuelle">Suzuki Swift Manuelle</option>
+                                <option value="suzuki-swift-automatique">Suzuki Swift Automatique</option>
+                                <option value="pickup-l200-mitsubishi">Pickup L200 Mitsubishi</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pickup-date" data-lang-key="reservation_pickup_date">Date de prise en charge*</label>
+                                <input type="date" id="pickup-date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="return-date" data-lang-key="reservation_return_date">Date de retour*</label>
+                                <input type="date" id="return-date" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pickup-time" data-lang-key="reservation_pickup_time">Heure de prise en charge*</label>
+                                <input type="time" id="pickup-time" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="return-time" data-lang-key="reservation_return_time">Heure de retour*</label>
+                                <input type="time" id="return-time" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pickup-location" data-lang-key="reservation_pickup_location">Lieu de prise en charge</label>
+                                <select id="pickup-location" class="form-control">
+                                    <option value="uturoa">Ville Uturoa</option>
+                                    <option value="gare-maritime">Gare maritime</option>
+                                    <option value="aeroport">Aéroport</option>
+                                    <option value="marina-uturoa">Marina Uturoa</option>
+                                    <option value="marina-apooiti">Marina Apooiti</option>
+                                    <option value="hotel">Hôtel, pension, Rbnb (à préciser dans message)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="return-location" data-lang-key="reservation_return_location">Lieu de retour</label>
+                                <select id="return-location" class="form-control">
+                                    <option value="uturoa">Ville Uturoa</option>
+                                    <option value="gare-maritime">Gare maritime</option>
+                                    <option value="aeroport">Aéroport</option>
+                                    <option value="marina-uturoa">Marina Uturoa</option>
+                                    <option value="marina-apooiti">Marina Apooiti</option>
+                                    <option value="hotel">Hôtel, pension, Rbnb (à préciser dans message)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" id="hotel-details" style="display: none;">
+                            <label for="hotel-name" data-lang-key="reservation_hotel_name">Nom de l'hôtel</label>
+                            <input type="text" id="hotel-name" class="form-control">
+                        </div>
+                        
+                        <h3 data-lang-key="reservation_contact_info">Vos coordonnées</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name" data-lang-key="reservation_first_name">Prénom*</label>
+                                <input type="text" id="first-name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name" data-lang-key="reservation_last_name">Nom*</label>
+                                <input type="text" id="last-name" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" data-lang-key="reservation_email">Email*</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" data-lang-key="reservation_phone">Téléphone*</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                            <div class="form-note" data-lang-key="reservation_phone_note">Format international recommandé (ex: +33 6 XX XX XX XX)</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" data-lang-key="reservation_message">Message / Demandes spéciales</label>
+                            <textarea id="message" class="form-control" rows="4"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn-primary" style="width: 100%;" data-lang-key="reservation_submit">Envoyer ma demande</button>
+                        </div>
+                        
+                        <div class="form-note" style="text-align: center; margin-top: var(--spacing-sm);" data-lang-key="reservation_required_fields">* Champs obligatoires</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-preview" style="background-color: var(--light-color); padding: var(--spacing-xl) 0;">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="faq_title">Questions fréquentes</h2>
+            
+            <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item" style="margin-bottom: var(--spacing-md); background: white; padding: var(--spacing-md); border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
+                    <h3 style="margin-bottom: var(--spacing-sm); color: var(--primary-color);" data-lang-key="faq_question1">Quelle est la durée minimale de location?</h3>
+                    <p style="margin-bottom: 0;" data-lang-key="faq_answer1">La durée minimale de location est de 24 heures. Pour les réservations de moins de 3 jours, des frais supplémentaires peuvent s'appliquer.</p>
+                </div>
+                
+                <div class="faq-item" style="margin-bottom: var(--spacing-md); background: white; padding: var(--spacing-md); border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
+                    <h3 style="margin-bottom: var(--spacing-sm); color: var(--primary-color);" data-lang-key="faq_question2">Le carburant est-il inclus?</h3>
+                    <p style="margin-bottom: 0;" data-lang-key="faq_answer2">Les véhicules sont fournis avec un réservoir plein et doivent être retournés avec un réservoir plein. Dans le cas contraire, des frais de carburant vous seront facturés.</p>
+                </div>
+                
+                <div class="faq-item" style="margin-bottom: var(--spacing-md); background: white; padding: var(--spacing-md); border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
+                    <h3 style="margin-bottom: var(--spacing-sm); color: var(--primary-color);" data-lang-key="faq_question3">Puis-je modifier ou annuler ma réservation?</h3>
+                    <p style="margin-bottom: 0;" data-lang-key="faq_answer3">Oui, vous pouvez modifier ou annuler votre réservation jusqu'à 48 heures avant la date de prise en charge sans frais. Pour toute annulation tardive, des frais peuvent s'appliquer.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--spacing-lg);">
+                <a href="faq.html" class="btn-text" data-lang-key="faq_see_all">Voir toutes les questions fréquentes <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                    <p data-lang-key="footer_tagline">Votre partenaire mobilité sur l'île de Raiatea</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_navigation">Navigation</h4>
+                        <ul>
+                            <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                            <li><a href="vehicules.html" data-lang-key="nav_vehicles">Nos Véhicules</a></li>
+                            <li><a href="tarifs.html" data-lang-key="nav_rates">Tarifs</a></li>
+                            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+                            <li><a href="about.html" data-lang-key="nav_about">À Propos</a></li>
+                            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_info">Informations</h4>
+                        <ul>
+                            <li><a href="faq.html" data-lang-key="nav_faq">FAQ</a></li>
+                            <li><a href="terms.html" data-lang-key="nav_terms">Conditions Générales</a></li>
+                            <li><a href="privacy.html" data-lang-key="nav_privacy">Politique de Confidentialité</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_contact">Contact</h4>
+                        <ul class="contact-info">
+                            <li data-lang-key="footer_address"><i class="fas fa-map-marker-alt"></i> Uturoa, Raiatea, Polynésie Française</li>
+                            <li data-lang-key="footer_phone"><i class="fas fa-phone"></i> +689 87 XX XX XX</li>
+                            <li data-lang-key="footer_email"><i class="fas fa-envelope"></i> info@mmrentalcar-raiatea.com</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer_copyright">&copy; 2025 M&M Rental Car Raiatea. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Additional JS for the reservation page
+        document.addEventListener('DOMContentLoaded', function() {
+            const pickupLocation = document.getElementById('pickup-location');
+            const returnLocation = document.getElementById('return-location');
+            const hotelDetails = document.getElementById('hotel-details');
+            
+            function checkHotelDetails() {
+                if (pickupLocation.value === 'hotel' || returnLocation.value === 'hotel') {
+                    hotelDetails.style.display = 'block';
+                } else {
+                    hotelDetails.style.display = 'none';
+                }
+            }
+            
+            pickupLocation.addEventListener('change', checkHotelDetails);
+            returnLocation.addEventListener('change', checkHotelDetails);
+            
+            // Date validation
+            const pickupDate = document.getElementById('pickup-date');
+            const returnDate = document.getElementById('return-date');
+            
+            // Set minimum date to today
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, '0');
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const yyyy = today.getFullYear();
+            const todayStr = yyyy + '-' + mm + '-' + dd;
+            
+            pickupDate.setAttribute('min', todayStr);
+            
+            pickupDate.addEventListener('change', function() {
+                returnDate.setAttribute('min', this.value);
+                
+                // If return date is before pickup date, reset it
+                if (returnDate.value && returnDate.value < this.value) {
+                    returnDate.value = this.value;
+                }
+            });
+        });
+    </script>
+    <script src="js/language-switcher.js"></script>
+</body>
+</html>

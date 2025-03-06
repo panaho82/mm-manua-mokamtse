@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&M Rental Car - Tarifs</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/flag-icons.css">
+    <style>
+        @media (max-width: 768px) {
+            .hamburger {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                </a>
+            </div>
+            <nav>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="fr" title="Français">
+                        <img src="images/flags/fr.svg" alt="Français" class="flag-icon">
+                    </button>
+                    <button class="lang-btn" data-lang="en" title="English">
+                        <img src="images/flags/en.svg" alt="English" class="flag-icon">
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                    <li><a href="vehicules.html" data-lang-key="nav_vehicles">Nos Véhicules</a></li>
+                    <li><a href="tarifs.html" class="active" data-lang-key="nav_rates">Tarifs</a></li>
+                    <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+                    <li><a href="about.html" data-lang-key="nav_about">À Propos</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="header-btn">
+                    <a href="reservation.html" class="btn-primary" data-lang-key="nav_book">Réserver</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-header" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center; padding: var(--spacing-lg) 0; color: white; text-align: center;">
+        <div class="container">
+            <h1 data-lang-key="rates_title">Nos Tarifs</h1>
+            <p data-lang-key="rates_subtitle">Des prix transparents et compétitifs pour tous vos besoins de location</p>
+        </div>
+    </section>
+
+    <!-- Grille tarifaire -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="pricing_title">Nos Véhicules Disponibles</h2>
+            
+    
+            
+            <div class="grille-tarifs">
+                <div class="entete-grille">
+                    <div class="col-voiture">Véhicule</div>
+                    <div class="col-capacite">Capacité</div>
+                    <div class="col-prix"><span class="tarifs-text">Tarifs 24H</span></div>
+                </div>
+
+                <div class="ligne-tarif">
+                    <div class="col-voiture">
+                        <i class="fas fa-car-side"></i>
+                        Kia Picanto
+                    </div>
+                    <div class="col-capacite">
+                        <i class="fas fa-user"></i> 4 
+                        <i class="fas fa-suitcase"></i> 1
+                    </div>
+                    <div class="col-prix">5 500 XPF</div>
+                </div>
+
+                <div class="ligne-tarif">
+                    <div class="col-voiture">
+                        <i class="fas fa-car-side"></i>
+                        Suzuki Swift Manuelle
+                    </div>
+                    <div class="col-capacite">
+                        <i class="fas fa-user"></i> 5 
+                        <i class="fas fa-suitcase"></i> 2
+                    </div>
+                    <div class="col-prix">6 000 XPF</div>
+                </div>
+
+                <div class="ligne-tarif">
+                    <div class="col-voiture">
+                        <i class="fas fa-car-side"></i>
+                        Suzuki Swift Automatique
+                    </div>
+                    <div class="col-capacite">
+                        <i class="fas fa-user"></i> 5 
+                        <i class="fas fa-suitcase"></i> 2
+                    </div>
+                    <div class="col-prix">6 500 XPF</div>
+                </div>
+
+                <div class="ligne-tarif">
+                    <div class="col-voiture">
+                        <i class="fas fa-car-side"></i>
+                        Mitsubishi Mirage
+                    </div>
+                    <div class="col-capacite">
+                        <i class="fas fa-user"></i> 5 
+                        <i class="fas fa-suitcase"></i> 2
+                    </div>
+                    <div class="col-prix">5 500 XPF</div>
+                </div>
+
+        
+                <div class="ligne-tarif">
+                    <div class="col-voiture">
+                        <i class="fas fa-car-side"></i>
+                        Peugeot 208
+                    </div>
+                    <div class="col-capacite">
+                        <i class="fas fa-user"></i> 5 
+                        <i class="fas fa-suitcase"></i> 2
+                    </div>
+                    <div class="col-prix">6 000 XPF</div>
+                </div>
+
+                <div class="ligne-tarif">
+                    <div class="col-voiture">
+                        <i class="fas fa-car-side"></i>
+                        Kia Rio
+                    </div>
+                    <div class="col-capacite">
+                        <i class="fas fa-user"></i> 5 
+                        <i class="fas fa-suitcase"></i> 2
+                    </div>
+                    <div class="col-prix">6 000 XPF</div>
+                </div>
+
+                <div class="ligne-tarif">
+                    <div class="col-voiture">
+                        <i class="fas fa-car-side"></i>
+                        SUV L200
+                    </div>
+                    <div class="col-capacite">
+                        <i class="fas fa-user"></i> 5 
+                        <i class="fas fa-suitcase"></i> 5
+                    </div>
+                    <div class="col-prix">12 000 XPF</div>
+                </div>
+            </div>
+
+            <div class="notes-tarifs">
+                <p>* Prix incluant l'assurance responsabilité civile<br>
+                ** Carburant non inclus</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                    <p data-lang-key="footer_slogan">Votre partenaire mobilité sur l'île de Raiatea</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_navigation">Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="vehicules.html">Nos Véhicules</a></li>
+                            <li><a href="tarifs.html">Tarifs</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">À Propos</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_info">Informations</h4>
+                        <ul>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="terms.html">Conditions Générales</a></li>
+                            <li><a href="privacy.html">Politique de Confidentialité</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_contact">Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> <span data-lang-key="footer_address">Uturoa, Raiatea, Polynésie Française</span></li>
+                            <li><i class="fas fa-phone"></i> <span data-lang-key="footer_phone">+689 87 26 27 73</span></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@mmrentalcar-raiatea.com" data-lang-key="footer_email">info@mmrentalcar-raiatea.com</a></li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer_copyright">&copy; 2025 M&M Rental Car Raiatea. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/language-switcher.js"></script>
+</body>
+</html>

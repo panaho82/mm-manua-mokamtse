@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - M&M Rental Car Raiatea</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/flag-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques à la page FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: var(--spacing-md);
+            border-bottom: 1px solid #eee;
+            padding-bottom: var(--spacing-md);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 500;
+            color: var(--primary-color);
+            padding: var(--spacing-sm) 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            color: var(--accent-color);
+        }
+        
+        .faq-question i {
+            transition: transform var(--transition-normal);
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: var(--spacing-sm) 0;
+            color: var(--text-light);
+            display: none;
+            line-height: 1.6;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+        
+        .faq-category {
+            margin-top: var(--spacing-lg);
+        }
+        
+        .faq-category h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.5rem;
+        }
+        
+        .contact-box {
+            background-color: var(--light-bg);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            margin-top: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .contact-box h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .contact-box p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                </a>
+            </div>
+            <nav>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="fr" title="Français">
+                        <img src="images/flags/fr.svg" alt="Français" class="flag-icon">
+                    </button>
+                    <button class="lang-btn" data-lang="en" title="English">
+                        <img src="images/flags/en.svg" alt="English" class="flag-icon">
+                    </button>
+                </div>
+                <div class="hamburger" style="margin-top: 10px;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                    <li><a href="vehicules.html" data-lang-key="nav_vehicles">Nos Véhicules</a></li>
+                    <li><a href="tarifs.html" data-lang-key="nav_rates">Tarifs</a></li>
+                    <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+                    <li><a href="about.html" data-lang-key="nav_about">À Propos</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="header-btn">
+                    <a href="reservation.html" class="btn-primary" data-lang-key="nav_book">Réserver</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center; padding: var(--spacing-lg) 0; color: white; text-align: center;">
+        <div class="container">
+            <h1 data-lang-key="faq_title">Foire Aux Questions</h1>
+            <p data-lang-key="faq_intro">Trouvez des réponses à vos questions les plus fréquentes</p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+                <div class="faq-category">
+                    <h2>Réservation et Paiement</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Comment puis-je réserver un véhicule ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Vous pouvez réserver un véhicule de plusieurs façons :
+                            <ul>
+                                <li>En ligne via notre formulaire de réservation sur ce site</li>
+                                <li>Par téléphone au +689 87 XX XX XX</li>
+                                <li>Par email à info@mmrentalcar-raiatea.com</li>
+                                <li>Directement à notre agence à Uturoa, Raiatea</li>
+                            </ul>
+                            Pour toute réservation, nous vous demandons de préciser vos dates de location, le type de véhicule souhaité et vos coordonnées.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quels moyens de paiement acceptez-vous ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Nous acceptons les moyens de paiement suivants :
+                            <ul>
+                                <li>Cartes de crédit (Visa, MasterCard, American Express)</li>
+                                <li>Espèces (XPF)</li>
+                                <li>Virements bancaires (pour les réservations à l'avance)</li>
+                            </ul>
+                            Le paiement s'effectue généralement lors de la prise du véhicule, sauf pour les réservations en haute saison où un acompte peut être demandé.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quelle est votre politique d'annulation ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Notre politique d'annulation est la suivante :
+                            <ul>
+                                <li>Annulation plus de 48h avant la date de prise en charge : remboursement intégral</li>
+                                <li>Annulation entre 24h et 48h avant la date de prise en charge : 50% de frais</li>
+                                <li>Annulation moins de 24h avant la date de prise en charge ou non-présentation : aucun remboursement</li>
+                            </ul>
+                            Pour toute modification de réservation, nous vous invitons à nous contacter dès que possible.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h2>Conditions de Location</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quels documents sont nécessaires pour louer un véhicule ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Pour louer un véhicule chez M&M Rental Car, vous devez présenter :
+                            <ul>
+                                <li>Un permis de conduire valide (depuis au moins 1 an)</li>
+                                <li>Une pièce d'identité (passeport)</li>
+                                <li>Une carte de crédit au nom du conducteur principal pour la caution</li>
+                            </ul>
+                            Tous les conducteurs additionnels doivent également présenter leur permis de conduire.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quel est l'âge minimum pour louer un véhicule ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            L'âge minimum pour louer un véhicule chez M&M Rental Car est de 21 ans. Pour les conducteurs âgés de 21 à 25 ans, des frais supplémentaires peuvent s'appliquer et certaines catégories de véhicules peuvent ne pas être disponibles.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quel est le montant de la caution ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Notre agence de location de véhicules ne requiert aucun dépôt de garantie lors de la prise en charge du véhicule. Cependant, en cas de dommages survenus pendant la période de location, le locataire est tenu de couvrir les frais de réparation correspondants. Le montant des réparations sera déterminé sur la base de la facture fournie par le garagiste.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h2>Véhicules et Services</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Le carburant est-il inclus dans le prix de location ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Non, le carburant n'est pas inclus dans le prix de location. Nous vous remettons le véhicule avec le plein de carburant et vous devez le rendre avec le même niveau. Si le véhicule n'est pas rendu avec le plein, des frais de carburant vous seront facturés, plus des frais de service.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Proposez-vous un service de livraison et de récupération ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Oui, nous proposons un service gratuit de livraison et de récupération des véhicules dans les hôtels, pensions de famille et au port de Raiatea. Il vous suffit de nous indiquer le lieu et l'heure lors de votre réservation.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Que faire en cas de panne ou d'accident ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            En cas de panne ou d'accident, contactez-nous immédiatement au +689 87 XX XX XX. Notre service d'assistance est disponible 24h/24 et 7j/7. Selon la situation, nous vous enverrons une assistance ou vous proposerons un véhicule de remplacement. En cas d'accident, vous devez également remplir un constat amiable et contacter la police si nécessaire.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Les assurances sont-elles incluses ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Oui, une assurance tous risques est incluse dans nos tarifs de location. Cependant, une franchise reste à votre charge en cas de dommage ou d'accident. Vous pouvez opter pour une réduction de franchise moyennant un supplément journalier de 1 500 XPF.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h2>Informations Pratiques</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quelles sont les règles de conduite à Raiatea ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            À Raiatea, comme dans toute la Polynésie française, on conduit à droite. La vitesse est limitée à 60 km/h sur les routes principales et à 30 km/h dans les zones urbaines. Le port de la ceinture de sécurité est obligatoire pour tous les passagers et l'utilisation du téléphone au volant est interdite. Soyez particulièrement vigilant sur les routes de montagne et respectez les limitations de vitesse.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Où peut-on faire le plein de carburant à Raiatea ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Il y a plusieurs stations-service à Raiatea, principalement situées à Uturoa et le long de la route de ceinture. Nous vous indiquerons les stations les plus proches lors de la prise du véhicule. Notez que certaines stations peuvent avoir des horaires limités, surtout le dimanche et les jours fériés.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Peut-on aller sur d'autres îles avec le véhicule de location ?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Non, nos véhicules doivent rester sur l'île de Raiatea. Il n'est pas autorisé de les transporter sur d'autres îles, même par ferry.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-box">
+                    <h3>Vous n'avez pas trouvé votre réponse ?</h3>
+                    <p>Notre équipe est à votre disposition pour répondre à toutes vos questions.</p>
+                    <a href="contact.html" class="btn-primary">Contactez-nous</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                    <p>Votre partenaire mobilité sur l'île de Raiatea</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="vehicules.html">Nos Véhicules</a></li>
+                            <li><a href="tarifs.html">Tarifs</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">À Propos</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Informations</h4>
+                        <ul>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="terms.html">Conditions Générales</a></li>
+                            <li><a href="privacy.html">Politique de Confidentialité</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Uturoa, Raiatea, Polynésie Française</li>
+                            <li><i class="fas fa-phone"></i> +689 87 XX XX XX</li>
+                            <li><i class="fas fa-envelope"></i> info@mmrentalcar-raiatea.com</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 M&M Rental Car Raiatea. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <script>
+        // Script pour les questions/réponses FAQ
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Toggle active class on the question
+                    this.classList.toggle('active');
+                    
+                    // Toggle show class on the answer
+                    const answer = this.nextElementSibling;
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                    } else {
+                        answer.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
