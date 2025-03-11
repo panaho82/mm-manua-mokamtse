@@ -216,8 +216,8 @@
 
     <section class="page-header" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center; padding: var(--spacing-lg) 0; color: white; text-align: center;">
         <div class="container">
-            <h1>Contactez-nous</h1>
-            <p>Nous sommes à votre disposition pour répondre à toutes vos questions</p>
+            <h1 data-lang-key="contact_title">Contactez-nous</h1>
+            <p data-lang-key="contact_subtitle">Nous sommes à votre écoute pour toute question ou réservation</p>
         </div>
     </section>
 
@@ -230,19 +230,18 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-content">
-                            <h3>Adresse</h3>
-                            <p>Nous trouvons notre bureau dans le parking de l'aéroport.</p>
-                            <p>Uturoa<br>Raiatea, Polynésie française 98735</p>
+                            <h3 data-lang-key="contact_address_title">Adresse</h3>
+                            <p data-lang-key="contact_address">Uturoa, Raiatea, Polynésie Française</p>
                         </div>
                     </div>
                     
                     <div class="contact-card">
                         <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
+                            <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-content">
-                            <h3>Téléphone</h3>
-                            <p>+689 87 26 27 73 (Mobile)</p>
+                            <h3 data-lang-key="contact_phone_title">Téléphone</h3>
+                            <p data-lang-key="contact_phone">+689 87 26 27 73</p>
                         </div>
                     </div>
                     
@@ -251,95 +250,54 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-content">
-                            <h3>Email</h3>
-                            <p>mmlocationvoitureraiatea@gmail.com</p>
+                            <h3 data-lang-key="contact_email_title">Email</h3>
+                            <p><a href="mailto:mmlocationvoitureraiatea@gmail.com" data-lang-key="contact_email">mmlocationvoitureraiatea@gmail.com</a></p>
                         </div>
                     </div>
                     
-                    <div class="business-hours">
-                        <h3>Horaires d'ouverture</h3>
-                        <div class="hours-grid">
-                            <div>
-                                <div class="day-hours">
-                                    <span class="day">Lundi</span>
-                                    <span class="hours">7h30 - 17h00</span>
-                                </div>
-                                <div class="day-hours">
-                                    <span class="day">Mardi</span>
-                                    <span class="hours">7h30 - 17h00</span>
-                                </div>
-                                <div class="day-hours">
-                                    <span class="day">Mercredi</span>
-                                    <span class="hours">7h30 - 17h00</span>
-                                </div>
-                                <div class="day-hours">
-                                    <span class="day">Jeudi</span>
-                                    <span class="hours">7h30 - 17h00</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="day-hours">
-                                    <span class="day">Vendredi</span>
-                                    <span class="hours">7h30 - 17h00</span>
-                                </div>
-                                <div class="day-hours">
-                                    <span class="day">Samedi</span>
-                                    <span class="hours">7h30 - 17h00</span>
-                                </div>
-                                <div class="day-hours">
-                                    <span class="day">Dimanche</span>
-                                    <span class="hours">7h30 - 17h00</span>
-                                </div>
-                                <div class="day-hours">
-                                    <span class="day">Jours fériés</span>
-                                    <span class="hours">Sur RDV</span>
-                                </div>
-                            </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h3 data-lang-key="contact_hours_title">Heures d'ouverture</h3>
+                            <p data-lang-key="contact_hours">Lundi - Samedi: 7h30 - 17h30<br>Dimanche: Sur rendez-vous</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <h2>Envoyez-nous un message</h2>
-                    <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+                    <h2 data-lang-key="contact_form_title">Envoyez-nous un message</h2>
+                    <p data-lang-key="contact_form_subtitle">Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
                     
                     <form action="#" method="post" id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Nom complet</label>
+                                <label for="name" data-lang-key="contact_form_name">Nom</label>
                                 <input type="text" id="name" name="name" required>
                             </div>
-                            
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label for="email" data-lang-key="contact_form_email">Email</label>
                                 <input type="email" id="email" name="email" required>
                             </div>
                         </div>
                         
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Téléphone</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject">Sujet</label>
-                                <select id="subject" name="subject">
-                                    <option value="reservation">Réservation</option>
-                                    <option value="information">Demande d'information</option>
-                                    <option value="support">Support client</option>
-                                    <option value="feedback">Commentaires</option>
-                                    <option value="other">Autre</option>
-                                </select>
-                            </div>
+                        <div class="form-group">
+                            <label for="subject" data-lang-key="contact_form_subject">Sujet</label>
+                            <select id="subject" name="subject">
+                                <option value="reservation" data-lang-key="contact_form_subject_reservation">Réservation</option>
+                                <option value="information" data-lang-key="contact_form_subject_information">Demande d'information</option>
+                                <option value="feedback" data-lang-key="contact_form_subject_feedback">Commentaire</option>
+                                <option value="other" data-lang-key="contact_form_subject_other">Autre</option>
+                            </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Message</label>
+                            <label for="message" data-lang-key="contact_form_message">Message</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn-primary">Envoyer le message</button>
+                        <button type="submit" class="btn-primary" data-lang-key="contact_form_submit">Envoyer le message</button>
                     </form>
                 </div>
             </div>
@@ -348,20 +306,50 @@
 
     <section class="map-section">
         <div class="container">
-            <h2 class="section-title">Nous trouver</h2>
-            <div id="map" style="height: 400px; width: 100%;"></div>
-            <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-            <script>
-                var map = L.map('map').setView([-16.722398, -151.454630], 15);
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 19,
-                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
-                }).addTo(map);
-                L.marker([-16.722398, -151.454630]).addTo(map)
-                    .bindPopup('Notre bureau ici!')
-                    .openPopup();
-            </script>
+            <h2 class="section-title" data-lang-key="contact_map_title">Nous trouver</h2>
+            <p class="section-description" data-lang-key="contact_map_subtitle">Nous sommes situés au centre d'Uturoa, facilement accessibles depuis le port et les principaux hôtels.</p>
+            
+            <div class="map-container">
+                <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15137.05277775382!2d-151.44977233022463!3d-16.72899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x76bdc4e9fca8c4fd%3A0x4c7978f07f4a0d0a!2sUturoa%2C%20French%20Polynesia!5e0!3m2!1sen!2sus!4v1647434625051!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+            <div class="business-hours">
+                <h3 data-lang-key="contact_hours_detailed_title">Nos horaires détaillés</h3>
+                <div class="hours-grid">
+                    <div class="hours-column">
+                        <div class="day-hours">
+                            <span class="day" data-lang-key="contact_day_monday">Lundi</span>
+                            <span class="hours">7h30 - 17h30</span>
+                        </div>
+                        <div class="day-hours">
+                            <span class="day" data-lang-key="contact_day_tuesday">Mardi</span>
+                            <span class="hours">7h30 - 17h30</span>
+                        </div>
+                        <div class="day-hours">
+                            <span class="day" data-lang-key="contact_day_wednesday">Mercredi</span>
+                            <span class="hours">7h30 - 17h30</span>
+                        </div>
+                        <div class="day-hours">
+                            <span class="day" data-lang-key="contact_day_thursday">Jeudi</span>
+                            <span class="hours">7h30 - 17h30</span>
+                        </div>
+                    </div>
+                    <div class="hours-column">
+                        <div class="day-hours">
+                            <span class="day" data-lang-key="contact_day_friday">Vendredi</span>
+                            <span class="hours">7h30 - 17h30</span>
+                        </div>
+                        <div class="day-hours">
+                            <span class="day" data-lang-key="contact_day_saturday">Samedi</span>
+                            <span class="hours">7h30 - 17h30</span>
+                        </div>
+                        <div class="day-hours">
+                            <span class="day" data-lang-key="contact_day_sunday">Dimanche</span>
+                            <span class="hours" data-lang-key="contact_day_sunday_hours">Sur rendez-vous</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -370,34 +358,34 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
-                    <p>Votre partenaire mobilité sur l'île de Raiatea</p>
+                    <p data-lang-key="footer_slogan">Votre partenaire mobilité sur l'île de Raiatea</p>
                 </div>
                 <div class="footer-links">
                     <div class="link-column">
-                        <h4>Navigation</h4>
+                        <h4 data-lang-key="footer_navigation">Navigation</h4>
                         <ul>
-                            <li><a href="index.html">Accueil</a></li>
-                            <li><a href="vehicules.html">Nos Véhicules</a></li>
-                            <li><a href="tarifs.html">Tarifs</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="about.html">À Propos</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                            <li><a href="vehicules.html" data-lang-key="nav_vehicles">Nos Véhicules</a></li>
+                            <li><a href="tarifs.html" data-lang-key="nav_rates">Tarifs</a></li>
+                            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+                            <li><a href="about.html" data-lang-key="nav_about">À Propos</a></li>
+                            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
                         </ul>
                     </div>
                     <div class="link-column">
-                        <h4>Informations</h4>
+                        <h4 data-lang-key="footer_info">Informations</h4>
                         <ul>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="terms.html">Conditions Générales</a></li>
-                            <li><a href="privacy.html">Politique de Confidentialité</a></li>
+                            <li><a href="faq.html" data-lang-key="footer_faq">FAQ</a></li>
+                            <li><a href="terms.html" data-lang-key="footer_terms">Conditions Générales</a></li>
+                            <li><a href="privacy.html" data-lang-key="footer_privacy">Politique de Confidentialité</a></li>
                         </ul>
                     </div>
                     <div class="link-column">
-                        <h4>Contact</h4>
+                        <h4 data-lang-key="footer_contact">Contact</h4>
                         <ul class="contact-info">
-                            <li><i class="fas fa-map-marker-alt"></i> Uturoa, Raiatea, Polynésie Française</li>
+                            <li><i class="fas fa-map-marker-alt"></i> <span data-lang-key="footer_address_content">Uturoa, Raiatea, Polynésie Française</span></li>
                             <li><i class="fas fa-phone"></i> <span data-lang-key="footer_phone">+689 87 26 27 73</span></li>
-                            <li><i class="fas fa-envelope"></i> mmlocationvoitureraiatea@gmail.com</li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:mmlocationvoitureraiatea@gmail.com" data-lang-key="footer_email">mmlocationvoitureraiatea@gmail.com</a></li>
                         </ul>
                         <div class="social-links">
                             <a href="https://www.facebook.com/mmrentalcar.raiatea/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -408,7 +396,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 M&M Rental Car Raiatea. Tous droits réservés.</p>
+                <p data-lang-key="footer_copyright">&copy; 2025 M&M Rental Car Raiatea. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -423,7 +411,15 @@
             // Ici, vous pouvez ajouter le code pour traiter le formulaire
             // Par exemple, envoyer les données à un serveur via AJAX
             
-            alert('Merci pour votre message ! Nous vous contacterons bientôt.');
+            // Message d'alerte traduit en utilisant les traductions
+            const lang = localStorage.getItem('selectedLanguage') || 'fr';
+            let message = 'Merci pour votre message ! Nous vous contacterons bientôt.';
+            
+            if (lang === 'en') {
+                message = 'Thank you for your message! We will contact you soon.';
+            }
+            
+            alert(message);
             this.reset();
         });
     </script>
