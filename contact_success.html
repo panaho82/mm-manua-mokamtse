@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message envoyé - M&M Rental Car Raiatea</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/flag-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .success-container {
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .success-icon {
+            font-size: 5rem;
+            color: var(--success-color);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .success-title {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .success-message {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .btn-container {
+            margin-top: var(--spacing-lg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                </a>
+            </div>
+            <nav>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                    <li><a href="vehicules.html" data-lang-key="nav_vehicles">Nos Véhicules</a></li>
+                    <li><a href="tarifs.html" data-lang-key="nav_rates">Tarifs</a></li>
+                    <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+                    <li><a href="about.html" data-lang-key="nav_about">À Propos</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="header-btn">
+                    <a href="reservation.html" class="btn-primary" data-lang-key="nav_book">Réserver</a>
+                </div>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="fr" title="Français">
+                        <img src="images/flags/fr.svg" alt="Français" class="flag-icon">
+                    </button>
+                    <button class="lang-btn" data-lang="en" title="English">
+                        <img src="images/flags/en.svg" alt="English" class="flag-icon">
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.png'); background-size: cover; background-position: center; padding: var(--spacing-lg) 0; color: white; text-align: center;">
+        <div class="container">
+            <h1 data-lang-key="success_title">Message envoyé</h1>
+            <p data-lang-key="success_subtitle">Merci pour votre message</p>
+        </div>
+    </section>
+
+    <section class="success-section">
+        <div class="container">
+            <div class="success-container">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2 class="success-title" data-lang-key="contact_success_title">Message envoyé avec succès !</h2>
+                <p class="success-message" data-lang-key="contact_success_message">Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais. Merci de nous avoir contactés.</p>
+                <div class="btn-container">
+                    <a href="index.html" class="btn-primary" data-lang-key="back_to_home">Retour à l'accueil</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/M&M Rental Car logo.jpg" alt="M&M Rental Car Raiatea Logo">
+                    <p data-lang-key="footer_slogan">Votre partenaire mobilité sur l'île de Raiatea</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4 data-lang-key="footer_navigation">Navigation</h4>
+                        <ul>
+                            <li><a href="index.html" data-lang-key="nav_home">Accueil</a></li>
+                            <li><a href="vehicules.html" data-lang-key="nav_vehicles">Nos Véhicules</a></li>
+                            <li><a href="tarifs.html" data-lang-key="nav_rates">Tarifs</a></li>
+                            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+                            <li><a href="about.html" data-lang-key="nav_about">À Propos</a></li>
+                            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-lang-key="footer_contact">Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-lang-key="footer_address">Uturoa, Raiatea, Polynésie Française</span></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+68987262773">+689 87 26 27 73</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:reservation@mm-locationvoitureraiatea.shop">reservation@mm-locationvoitureraiatea.shop</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer_copyright">&copy; 2023 M&M Rental Car Raiatea. Tous droits réservés.</p>
+                <div class="footer-links-bottom">
+                    <a href="privacy.html" data-lang-key="footer_privacy">Politique de confidentialité</a>
+                    <a href="terms.html" data-lang-key="footer_terms">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/language-switcher.js"></script>
+</body>
+</html>
