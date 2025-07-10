@@ -406,21 +406,34 @@
     <script>
         // Script pour le formulaire de contact
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            let isValid = true;
+            const requiredFields = this.querySelectorAll('[required]');
             
-            // Ici, vous pouvez ajouter le code pour traiter le formulaire
-            // Par exemple, envoyer les données à un serveur via AJAX
+            // Validation des champs requis
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('error');
+                } else {
+                    field.classList.remove('error');
+                }
+            });
             
-            // Message d'alerte traduit en utilisant les traductions
-            const lang = localStorage.getItem('selectedLanguage') || 'fr';
-            let message = 'Merci pour votre message ! Nous vous contacterons bientôt.';
-            
-            if (lang === 'en') {
-                message = 'Thank you for your message! We will contact you soon.';
+            if (!isValid) {
+                e.preventDefault(); // Empêcher la soumission seulement si le formulaire n'est pas valide
+                return false;
             }
             
-            alert(message);
-            this.reset();
+            // Désactiver le bouton APRÈS un délai pour permettre la soumission
+            const submitButton = this.querySelector('button[type="submit"]');
+            if (submitButton) {
+                setTimeout(() => {
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Envoi en cours...';
+                }, 100);
+            }
+            
+            // Le formulaire sera soumis normalement vers send_contact.php
         });
     </script>
 </body>

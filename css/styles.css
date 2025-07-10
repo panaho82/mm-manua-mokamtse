@@ -1063,3 +1063,55 @@ footer {
     height: 200px; /* Ajustez la hauteur selon vos besoins */
     object-fit: contain;
 }
+
+.form-control.error {
+    border-color: var(--danger-color);
+    background-color: #ffeaea;
+}
+
+.form-control.error:focus {
+    border-color: var(--danger-color);
+    box-shadow: 0 0 0 2px rgba(239, 71, 111, 0.2);
+}
+
+/* Styles pour les boutons désactivés */
+.btn-primary:disabled,
+.btn-secondary:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-primary:disabled:hover,
+.btn-secondary:disabled:hover {
+    background-color: #cccccc;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Animation de chargement pour le bouton */
+.btn-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -63,8 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const reservationForm = document.querySelector('.reservation-form');
     
     if (reservationForm) {
+        let isSubmitting = false; // Protection contre les soumissions multiples
+        
         reservationForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Vérifier si le formulaire est déjà en cours de soumission
+            if (isSubmitting) {
+                e.preventDefault();
+                return false;
+            }
             
             let isValid = true;
             const requiredFields = reservationForm.querySelectorAll('[required]');
@@ -78,16 +84,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            if (isValid) {
-                // Here you would normally submit the form or use AJAX
-                // For this static site, we'll just show a success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'form-success';
-                successMessage.innerHTML = '<p>Votre demande a été envoyée avec succès! Nous vous contacterons bientôt.</p>';
-                
-                reservationForm.innerHTML = '';
-                reservationForm.appendChild(successMessage);
+            if (!isValid) {
+                e.preventDefault(); // Empêcher la soumission seulement si le formulaire n'est pas valide
+                return false;
             }
+            
+            // Marquer comme en cours de soumission et désactiver le bouton
+            isSubmitting = true;
+            const submitButton = reservationForm.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Envoi en cours...';
+            }
+            
+            // Le formulaire sera soumis normalement vers send_reservation.php
         });
     }
     

@@ -89,6 +89,10 @@
                     <i class="fas fa-check-circle"></i>
                 </div>
                 <h2 class="success-title" data-lang-key="reservation_success_heading">Demande de réservation envoyée avec succès !</h2>
+                <div id="reservation-number" style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #2E7D32;">
+                    <h3 style="color: #2E7D32; margin: 0 0 10px 0;">📋 Votre numéro de réservation</h3>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: #2E7D32; margin: 0;" id="reservation-number-display">Chargement...</p>
+                </div>
                 <p class="success-message" data-lang-key="reservation_success_message">Nous avons bien reçu votre demande de réservation et nous vous contacterons dans les plus brefs délais pour la confirmer. Merci d'avoir choisi M&M Rental Car Raiatea.</p>
                 <div class="btn-container">
                     <a href="index.html" class="btn-primary" data-lang-key="back_to_home">Retour à l'accueil</a>
@@ -135,5 +139,21 @@
     </footer>
 
     <script src="js/language-switcher.js"></script>
+    <script>
+        // Récupérer le numéro de réservation depuis PHP
+        fetch('get_reservation_number.php')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success && data.reservation_number) {
+                    document.getElementById('reservation-number-display').textContent = data.reservation_number;
+                } else {
+                    document.getElementById('reservation-number-display').textContent = 'Numéro non disponible';
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                document.getElementById('reservation-number-display').textContent = 'Erreur lors du chargement';
+            });
+    </script>
 </body>
 </html>
